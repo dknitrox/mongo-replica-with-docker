@@ -145,7 +145,7 @@ function wait_for_databases {
   fi
   # make tcp call
   echo "IP == $ip PORT == 27017"
-  wait_for "$ip" 27017
+#  wait_for "$ip" 27017
 }
 
 function createKeyFile {
