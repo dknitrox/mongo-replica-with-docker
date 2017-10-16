@@ -111,7 +111,7 @@ function createMongoDBNode {
   removeAndCreateContainer $2 $3
 
   # verify if container is ready
-  wait_for_databases 'manager1'
+#  wait_for_databases 'manager1'
 
   echo '·······························'
   echo '·  CONTAINER '$1' CREATED ··'
