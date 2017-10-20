@@ -170,9 +170,9 @@ function add_replicas {
 }
 
 function init_replica_set {
-  docker exec -i $1 bash -c 'mongo /data/admin/replica.js'
+  docker exec -i $1 bash -c 'mongo < /data/admin/replica.js'
   sleep 2
-  docker exec -i $1 bash -c 'mongo /data/admin/admin.js'
+  docker exec -i $1 bash -c 'mongo < /data/admin/admin.js'
   cmd='mongo -u $MONGO_REPLICA_ADMIN -p $MONGO_PASS_REPLICA --eval "rs.status()" --authenticationDatabase "admin"'
   sleep 2
   docker exec -i mongoNode1 bash -c "$cmd"
